@@ -1,6 +1,9 @@
 <?php
 class signup extends CI_Controller
 {
+	/**
+	 * @TODO all my presentation logic should be there in the view file
+	 */
     public function index()
 	{
 		$this->load->helper('form');
