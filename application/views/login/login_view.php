@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h3>LOGIN FORM</h3>
-		<form action='login/process' method="post" name="process">
+		<form action='login/process' method="post" name="process" >
 		<label for="username">Username:</label>
 		<input type="text" size="20" id="username" name="username"/>
 		<br/><br/>

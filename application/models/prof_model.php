@@ -31,12 +31,16 @@ class Prof_model extends CI_Model
 		$time=time();
 	    $d=mdate($datestring,$time);
 		$u=$this->db->get_where('user1',array('Email'=>$email,'Password'=>$password));
+		foreach ($u->result() as $row1)
+		{
+		$ui=$row1->UID;
 		$dat=array(
 			//'TID'=>$tid,
-			'UID'=>$u,
+			'UID'=>$ui,
 			'Date'=>$d
 			);
 	$this->db->insert('timetrack',$dat);
+		}
 	}
 	
 }
