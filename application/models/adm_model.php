@@ -34,9 +34,10 @@ class Adm_model extends CI_Model
 			echo "<tr><td>";
 			echo $row->TID ,"</td><td>";
 			echo $row->UID ,"</td><td>";
-			echo $row->Date ,"</td></tr></table>";
+			echo $row->Date ,"</td></tr>";
 				
 		}
+		echo "</table>";
 	}
 }
 ?>

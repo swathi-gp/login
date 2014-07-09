@@ -32,3 +32,27 @@ ERROR - 2014-07-09 11:38:20 --> Array
 )
 
 ERROR - 2014-07-09 11:38:20 --> Severity: Warning  --> chmod(): Operation not permitted /var/www/git/login/system/libraries/Log.php 106
+ERROR - 2014-07-09 16:38:16 --> Array
+(
+    [name] => dgfdg
+    [email] => fgf@hgf.jvh
+    [password] => 1234567
+    [cword] => 1234567
+    [gender] => Female
+    [mobile] => 9875236524
+    [country] => India
+)
+
+ERROR - 2014-07-09 16:38:16 --> Severity: Warning  --> chmod(): Operation not permitted /var/www/git/login/system/libraries/Log.php 106
+ERROR - 2014-07-09 17:05:40 --> Array
+(
+    [name] => jhg
+    [email] => kgug@hg.mnh
+    [password] => 1234567
+    [cword] => 1234567
+    [gender] => Male
+    [mobile] => 9856358965
+    [country] => USA
+)
+
+ERROR - 2014-07-09 17:05:40 --> Severity: Warning  --> chmod(): Operation not permitted /var/www/git/login/system/libraries/Log.php 106
