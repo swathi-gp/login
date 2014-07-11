@@ -37,10 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-//$route['login/(:any)'] = 'login/view/$1';
+//$route['login/(:any)'] = 'login/login_view';
 //$route['login'] = 'login';
 $route['default_controller'] = 'login';
-//$route['(:any)'] = 'page/view/$1';
+//$route['(:any)'] = 'login/login_view';
 
 //$route['default_controller'] = "mylog";
 $route['404_override'] = '';

@@ -6,6 +6,7 @@
 			parent::__construct();
 			$this->load->database();
 			$this->load->helper('date');
+			$this->load->helper('url');
 		}
 		public function validate()
 		{
@@ -49,5 +50,9 @@
 		echo "</select>";
 		}
 		}
-    }
+}
+//redirect('signcon/logout');
 ?>
+<form action='login' method="post">
+	    	<input type="submit" value="LOGOUT">
+	    </form>

@@ -6,6 +6,10 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+		function fun()
+{
+alert("Data submitted successfully");
+}
 function validate()
 {
 if(document.prof.name.value == "" )
@@ -14,14 +18,28 @@ if(document.prof.name.value == "" )
      document.prof.name.focus() ;
      return false;
    }
-   
+  var n=document.getElementById('name');
+  var filter=/^([a-zA-z])+$/;
+  if(!filter.test(n.value))
+  {
+  	alert('please provide valid name');
+  	n.focus;
+  	return false;
+  }
    if( document.prof.email.value == "" )
    {
      alert( "Please provide your Email!" );
      document.prof.email.focus() ;
      return false;
    }
-   if( document.prof.password.value == "" )
+   var x = document.forms["prof"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+   if( document.prof.password.value == "")
    {
      alert( "Please provide your Password!" );
      document.prof.password.focus() ;
@@ -32,6 +50,13 @@ if(document.prof.name.value == "" )
      alert( "Please provide confirming password!" );
      document.prof.cword.focus() ;
      return false;
+   }
+   var p=document.getElementById('password');
+   var c=document.getElementById('cword');
+   if(p.value!=c.value)
+   {
+   	alert("please enter tha same password");
+   	return false;
    }
    if( document.prof.gender.value == "" )
    {
@@ -57,8 +82,8 @@ if(document.prof.name.value == "" )
 		<h3 style="color:blue;">Create your account</h3>
 		<form action='prof' method="post" name="prof">
 		<table><tr><td>
-			Name:</td></tr><tr><td>
-				<input type="text" name="name" id="name"></td></tr><tr><td>
+		Enter your Name:</td></tr><tr><td>
+				<input type="text" name="name" id="name" placeholder="Name"></td></tr><tr><td>
 		<label for="email">Email:</label></td></tr><tr><td>
 		<input type="text" size="20" id="email" name="email"/>
 		</td></tr><tr><td>
@@ -82,10 +107,13 @@ if(document.prof.name.value == "" )
 			<option value="USA" >USA</option>
 			<option value="japan">Japan</option></select>
 		</td></tr></table><br/>
-		<input type="submit" value="SUBMIT" onclick="return validate();"/>
-		<input type="reset" value="Reset"><br/>
-		</form>
-		<br/>
 		
+		<input type="submit" value="SUBMIT" onclick="return validate();" />
+			<input type="reset" value="Reset"><br/>
+		</form>
+		
+		<a href='logout' style="top:15%;left:70%; position:absolute;">LOGOUT</a>
+		<br/>
+	
 	</body>
 </html>

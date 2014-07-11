@@ -6,10 +6,8 @@ class login extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 	}
-	public function index($msg=Null)
+	public function index()
 	{
-		$data['msg']=$msg;
-		//$data['use']=$this->login_model->get_user();
 		$this->load->view('login/login_view');
 						
 	}
@@ -25,10 +23,10 @@ class login extends CI_Controller
 		$this->load->model('adm_model');
 		$result=$this->adm_model->disp();
 	}
-	
-	
-	
-	
+	public function ind()
+	{
+		redirect("login/login_view",'refresh');
+	}
 }
 	
 		

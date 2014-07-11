@@ -40,7 +40,38 @@ class Prof_model extends CI_Model
 			'Date'=>$d
 			);
 	$this->db->insert('timetrack',$dat);
+		$quer = $this->db->get_where('user1',array('UID'=>$ui));
+		echo "<table><tr><th>UID</th><th>Name</th><th>Email</th><th>Password</th><th>Gender</th><th>Mobile No.</th><th>Country</th>";
+		echo "</tr>";
+		foreach ($quer->result() as $row)
+		{
+			
+			echo "<tr><td>";
+			echo $row->UID ,"</td><td>";
+			echo $row->Name ,"</td><td>";
+			echo $row->Email ,"</td><td>";
+			echo $row->Password,"</td><td>";
+			echo $row->Gender,"</td><td>";
+			echo $row->Mobile,"</td><td>";
+			echo $row->Country,"</td></tr>";
+				
 		}
-	}
-	
+		echo "</table>";
+		$qu=$this->db->get_where('timetrack',array('UID'=>$ui));
+		echo "<table><tr><th>TID</th><th>UID</th><th>Date</th>";
+		echo "</tr>";
+		foreach ($qu->result() as $row)
+		{
+			
+			echo "<tr><td>";
+			echo $row->TID ,"</td><td>";
+			echo $row->UID ,"</td><td>";
+			echo $row->Date ,"</td></tr>";
+				
+		}
+		echo "</table>";
+		}
+		}
 }
+?>
+<a href='logout' style="top:15%;left:70%; position:absolute;">LOGOUT</a>

@@ -14,7 +14,13 @@ if(document.process.username.value == "" )
      document.process.username.focus() ;
      return false;
    }
-   
+   var x = document.forms["process"]["username"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
    if( document.process.password.value == "" )
    {
      alert( "Please provide your Password!" );
@@ -30,7 +36,7 @@ if(document.process.username.value == "" )
 			<div>
 				<h3>LOGIN FORM</h3>
 		<label for="username">Username:</label>
-		<input type="text" size="20" id="username" name="username"/>
+		<input type="text" size="20" id="username" name="username" placeholder="abc@gmail.com"/>
 		<br/><br/>
 		<label for="password">Password:</label>
 		<input type="password" size="20" id="password" name="password"/>
@@ -40,11 +46,8 @@ if(document.process.username.value == "" )
 		<input type="reset" value="Reset"><br/>
 		<br/>
 		</form>
-		<form action='signcon/sign' method="post" name="sign">
+		<form action='/git/login/index.php/signcon/sign' method="post" name="sign">
 		<input type="submit" value="SIGHNUP"/><br/><br/>
-		</form>
-		<form action='login/admin' method="post" name="admin">
-		<input type="submit" value="ADMIN"/><br/>
 	    </form>
 	   </div>
 	  </div>
